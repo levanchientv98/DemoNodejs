@@ -4,13 +4,18 @@ const port = 3000;
 const bookRouter = require('./routes/book');
 const productRouter = require('./routes/products')
 const userRouter = require('./routes/user')
+const playerRouter = require('./routes/players')
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 // app.get('/',(req,res) =>{res.send('Hello World!')});
-app.use('/v1/', bookRouter);
-app.use('/v1/', productRouter);
-app.use('/v1/', userRouter);
+app.use('/api/v1/', bookRouter);
+app.use('/api/v1/', productRouter);
+app.use('/api/v1/', userRouter);
+app.use('/api/v1/', playerRouter);
+;
 
 
 app.get('/message/:msg', (req, res) =>{
