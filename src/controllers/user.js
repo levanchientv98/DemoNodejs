@@ -32,17 +32,19 @@ function getUserByNameAndAge(req,res){
 // }
 
 function createUser(req,res){
-    const{ username, password, age} = req.body;
+    const{ username, password } = req.body;
     res.send({
         username,
         password,
-        age
     });
 }
+
+
 
 module.exports = {
     getAllUsers,
     getUserById,
     getUserByNameAndAge,
-    createUser
+    createUser,
+
 };
